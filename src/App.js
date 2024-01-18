@@ -25,6 +25,11 @@ const App = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink to="/Socials" activeClassName="active">
+                  Socials
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/Donate" activeClassName="active">
                   Donate
                 </NavLink>
