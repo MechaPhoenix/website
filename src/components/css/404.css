@@ -1,0 +1,82 @@
+/* NotFoundPage.css */
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .not-found-title {
+    font-size: 6em;
+    margin: 0;
+  }
+  
+  .not-found-text {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .circuit-board {
+    background-color: #282c34; /* Dark background color */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .circuit-line {
+    position: absolute;
+    background-color: #61dafb; /* Circuit line color */
+    height: 2px;
+    width: 50%;
+  }
+  
+  .horizontal {
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .vertical {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+  }
+  
+  .diagonal {
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 2px;
+    width: 70%;
+  }
+  
+  .circuit-dot {
+    position: absolute;
+    background-color: #61dafb; /* Circuit dot color */
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+  }
+  
+  .dot1 {
+    top: 15%;
+    left: 15%;
+  }
+  
+  .dot2 {
+    top: 60%;
+    left: 30%;
+  }
+  
+  .dot3 {
+    top: 80%;
+    left: 70%;
+  }
+  
+  /* Customize the styles further based on your preferences */
+  

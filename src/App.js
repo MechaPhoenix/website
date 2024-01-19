@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-do
 import logo from './assets/Logo.png';
 import './App.css';
 import Home from './components/pages/Home'
+import ErorrPage from "./components/pages/404"
 
 
 const App = () => {
@@ -67,6 +68,7 @@ const App = () => {
 
         <Routes>
           {/* <Route path="/" element={<Home />} /> */}
+          <Route path="*" element={<ErorrPage />} />
         </Routes>
         
       </div>
