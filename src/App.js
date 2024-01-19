@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-do
 import logo from './assets/Logo.png';
 import './App.css';
 import Home from './components/pages/Home'
+import Team from './components/pages/OurTeam'
 import ErorrPage from "./components/pages/404"
+const { CaptchaSiteKey, CaptchaSiteSecretKey } = require('./backend/json/api.json')
 
 
 const App = () => {
@@ -64,11 +66,16 @@ const App = () => {
             </ul>
           </nav>
         </header>
-       
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        {/* <button class="g-recaptcha" 
+        data-sitekey={CaptchaSiteKey}
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button> */}
 
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home />} />
           <Route path="*" element={<ErorrPage />} />
+          <Route path="/team" element={ <Team />} />
         </Routes>
         
       </div>
