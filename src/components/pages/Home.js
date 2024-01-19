@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <div>
       <header>
-        <h1>MechaPhoenix Robotics Team</h1>
+        <h1>7722 MechaPhoenix Robotics Team</h1>
       </header>
 
       <section>
