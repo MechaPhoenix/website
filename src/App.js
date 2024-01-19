@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom';
 import logo from './assets/Logo.png';
 import './App.css';
+import Home from './components/pages/Home'
 
 
 const App = () => {
@@ -62,18 +63,12 @@ const App = () => {
             </ul>
           </nav>
         </header>
+       
 
-        {/* <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/recent-updates" element={<RecentUpdates />} />
-          <Route path="/teasers" element={<Teasers />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/announcements" element={<Announcements />} />
-          <Route path="/rules" element={<Rules />} />
-          {/* <Route path="/discord" element={<DiscordWidget />} /> */}
-          {/* <Route path="/trusted-sources" element={<TrustedSources />} />
-          <Route path="*" element={<NotFound />} /> */}
-        {/* </Routes> } */}
+        <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
+        </Routes>
+        
       </div>
     </Router>
   );
