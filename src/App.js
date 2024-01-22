@@ -66,7 +66,16 @@ const App = () => {
             </ul>
           </nav>
         </header>
+
+
+
+
+
+
+        {/* Google Capthca Script */}
         <script src="https://www.google.com/recaptcha/api.js"></script>
+
+
         {/* <button class="g-recaptcha" 
         data-sitekey={CaptchaSiteKey}
         data-callback='onSubmit' 
