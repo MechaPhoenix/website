@@ -1,11 +1,15 @@
 import React from 'react';
+import { Admin, CustomRoutes, Authenticated } from 'react-admin';
+import Login from "./components/pages/admin/login"
+import DashBoard from './components/pages/admin/dashboard';
 import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom';
 import logo from './assets/Logo.png';
 import './App.css';
 import Home from './components/pages/Home'
 import Team from './components/pages/OurTeam'
 import ErorrPage from "./components/pages/404"
-const { CaptchaSiteKey, CaptchaSiteSecretKey } = require('./backend/json/api.json')
+import { CaptchaSiteKey, CaptchaSiteSecretKey } from './backend/json/api.json'
+
 
 
 const App = () => {
@@ -81,10 +85,19 @@ const App = () => {
         data-callback='onSubmit' 
         data-action='submit'>Submit</button> */}
 
+        
+  {/* <Admin>
+                <CustomRoutes>
+                   <Route path='/dashboard' element={<Authenticated><DashBoard /></Authenticated>} />
+                </CustomRoutes>
+             </Admin> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<ErorrPage />} />
           <Route path="/team" element={ <Team />} />
+          <Route path="/login" element={ <Login />} />
+          {/* <Route path='/dashboard' element={ <DashBoard />} /> */}
+          <Route path='/dashboard' element={<Authenticated>< DashBoard /></Authenticated>} />
         </Routes>
         
       </div>
