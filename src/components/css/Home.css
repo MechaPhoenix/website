@@ -19,7 +19,7 @@ body {
   }
   
   h2 {
-    color: #333;
+    color: rgb(255, 255, 255);
 
   }
 
@@ -28,9 +28,13 @@ body {
   }
   
   #promo-video {
-    width: 100%;
+    width: 50%;
     height: 400px;
     display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   #robot-section {
