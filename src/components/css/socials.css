@@ -1,0 +1,31 @@
+/* social.css */
+.hero-container {
+    background-image: url('../../assets/heroimages/socialshero.png'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    height: 100px; /* Adjust the minimum height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-container {
+    text-align: center;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.social-link:hover {
+    background-color: #3498db;
+    color: #ffffff;
+}

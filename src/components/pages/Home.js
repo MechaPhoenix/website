@@ -27,7 +27,7 @@ const LandingPage = () => {
       </section>
 
       <footer>
-        <h2>e</h2>
+        <h2>Site Created by James Bearinger | Images by Mecha Pheonix</h2>
       </footer>
     </div>
   );

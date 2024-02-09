@@ -2,11 +2,16 @@ import React from 'react';
 import { Admin, CustomRoutes, Authenticated } from 'react-admin';
 import Login from "./components/pages/admin/login"
 import DashBoard from './components/pages/admin/dashboard';
+import Contact from "./components/pages/contact"
 import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom';
 import logo from './assets/Logo.png';
 import './App.css';
 import Home from './components/pages/Home'
 import Team from './components/pages/OurTeam'
+import Urls from "./components/pages/team/urls"
+import Socials from './components/pages/socials';
+import CsvUploader from './components/pages/team/csvreader';
+import CsvEditor from './components/pages/team/csvcreator';
 import ErorrPage from "./components/pages/404"
 import { CaptchaSiteKey, CaptchaSiteSecretKey } from './backend/json/api.json'
 
@@ -53,7 +58,7 @@ const App = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/team" activeClassName="active">
+                <NavLink to="/ourteam" activeClassName="active">
                   Our team
                 </NavLink>
               </li>
@@ -94,9 +99,17 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<ErorrPage />} />
-          <Route path="/team" element={ <Team />} />
+          <Route path="/ourteam" element={ <Team />} />
           <Route path="/login" element={ <Login />} />
+          <Route path="/contact-us" element={ <Contact />} />
+          <Route path="/socials" element={ <Socials />} />
           {/* <Route path='/dashboard' element={ <DashBoard />} /> */}
+
+
+          <Route path='/team/csvupload' element={ <CsvUploader />} />
+          <Route path='/team/csvcreator' element={ <CsvEditor />} />
+          <Route path='/team' element={ <Urls />} />
+
           <Route path='/dashboard' element={<Authenticated>< DashBoard /></Authenticated>} />
         </Routes>
         

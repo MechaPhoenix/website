@@ -1,0 +1,42 @@
+.csv-uploader-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .csv-uploader-title {
+    color: #333;
+  }
+  
+  .csv-input {
+    margin-top: 10px;
+  }
+  
+  .csv-data-container {
+    margin-top: 20px;
+  }
+  
+  .csv-data-title {
+    color: #333;
+  }
+  
+  .csv-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+  
+  .csv-table th,
+  .csv-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .csv-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
