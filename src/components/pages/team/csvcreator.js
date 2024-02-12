@@ -89,35 +89,13 @@
 
 // export default CsvEditor;
 
-import React, { useState, useEffect } from 'react';
-import { createClient } from 'mongoose-browser';
+import React, { useState } from 'react';
 import csvtojson from 'csvtojson';
-import Settings from '../../../../src/backend/json/database/settings.json';
 import '../../css/csvcreator.css';
+import '../../css/dots.css'
 
 const CsvEditor = () => {
-  const [client, setClient] = useState(null);
-  const [isConnected, setIsConnected] = useState(false);
   const [tableData, setTableData] = useState([]);
-
-  useEffect(() => {
-    const mongoClient = createClient(Settings.MongoDBUri);
-    setClient(mongoClient);
-
-    return () => {
-      mongoClient.close();
-    };
-  }, []);
-
-  const checkMongoDBConnection = async () => {
-    try {
-      await client.connect();
-      setIsConnected(true);
-    } catch (error) {
-      setIsConnected(false);
-      console.error('Error connecting to MongoDB:', error);
-    }
-  };
 
   const addRow = () => {
     const teamName = prompt('Enter the team name:');
@@ -139,37 +117,26 @@ const CsvEditor = () => {
     setTableData(updatedTableData);
   };
 
-  const SaveToDB = async () => {
+  const SaveToJSON = () => {
     try {
-      if (!client.isConnected()) {
-        alert('Not connected to MongoDB. Please check your connection.');
-        return;
-      }
+      const jsonData = tableData.map(row => ({
+        teamName: row[0],
+        teamNumber: row[1],
+        robotHeight: row[2],
+        robotWeight: row[3],
+        prosAndCons: row[4],
+        robotCapabilities: row[5],
+      }));
 
-      const jsonData = await csvtojson().fromString(
-        tableData.map(row => row.join(',')).join('\n')
-      );
+      const jsonString = JSON.stringify(jsonData, null, 2); // Stringify JSON with indentation for better readability
 
-      const dataSchema = new client.Schema({
-        teamName: String,
-        teamNumber: String,
-        robotHeight: String,
-        robotWeight: String,
-        prosAndCons: String,
-        robotCapabilities: String,
-      });
+      // Save the JSON data to localStorage
+      localStorage.setItem('scouting_data', jsonString);
 
-      const DataModel = client.model('Data', dataSchema);
-
-      await DataModel.insertMany(jsonData);
-
-      alert('Data saved to MongoDB successfully!');
+      alert('Data saved to JSON file successfully!');
     } catch (error) {
-      console.error('Error saving data to MongoDB:', error);
-      alert('Error saving data to MongoDB. Please check the console for details.');
-    } finally {
-      setIsConnected(false);
-      await client.close();
+      console.error('Error saving data to JSON file:', error);
+      alert('Error saving data to JSON file. Please check the console for details.');
     }
   };
 
@@ -188,12 +155,9 @@ const CsvEditor = () => {
   };
 
   return (
+    
     <div className="csv-editor-container">
-      <h2 className="csv-editor-title">CSV Editor</h2>
-      <h2>All logs will be posted publicly from the Database</h2>
-
-      <h3>{isConnected ? 'Connected to MongoDB' : 'Not connected to MongoDB'}</h3>
-
+      <div class="dot green"><span><span></span></span></div>
       <table className="csv-editor-table">
         <thead>
           <tr>
@@ -232,14 +196,16 @@ const CsvEditor = () => {
         <button className="add-row-button" onClick={addRow}>
           Add Row
         </button>
-        <button className="add-row-button" onClick={SaveToDB}>
-          Save to Database
+        <button className="add-row-button" onClick={SaveToJSON}>
+          Save to JSON
         </button>
         <button className="download-csv-button" onClick={downloadCsv}>
           Download CSV
         </button>
       </div>
+      
     </div>
+    
   );
 };
 

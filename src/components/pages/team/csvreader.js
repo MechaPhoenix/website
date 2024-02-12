@@ -1,4 +1,4 @@
-// 
+// CSV Reader
 import React, { useState } from 'react';
 import CSVReader from 'react-csv-reader';
 import '../../css/csv.css';
@@ -6,6 +6,7 @@ import '../../css/csv.css';
 const CsvUploader = () => {
   const [csvDataArray, setCsvDataArray] = useState({});
 
+  // Set Column Titles
   const columnTitles = ['Team Name', 'Team Number', 'Robot Height', 'Robot Weight', 'Pros and Cons', 'What can the robot do'];
 
   const handleFileUpload = (data, fileInfo) => {
@@ -20,7 +21,7 @@ const CsvUploader = () => {
     });
 
     const newDataSet = {
-      title: 'CSV Data Set ' + (Object.keys(csvDataArray).length + 1),
+      title: 'Scout CSV Data Set ' + (Object.keys(csvDataArray).length + 1),
       headers,
       data: formattedData,
     };

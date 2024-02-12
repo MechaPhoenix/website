@@ -12,6 +12,7 @@ import Urls from "./components/pages/team/urls"
 import Socials from './components/pages/socials';
 import CsvUploader from './components/pages/team/csvreader';
 import CsvEditor from './components/pages/team/csvcreator';
+import JsonDisplay from './components/pages/team/jsondata';
 import ErorrPage from "./components/pages/404"
 import { CaptchaSiteKey, CaptchaSiteSecretKey } from './backend/json/api.json'
 
@@ -103,11 +104,9 @@ const App = () => {
           <Route path="/login" element={ <Login />} />
           <Route path="/contact-us" element={ <Contact />} />
           <Route path="/socials" element={ <Socials />} />
-          {/* <Route path='/dashboard' element={ <DashBoard />} /> */}
-
-
           <Route path='/team/csvupload' element={ <CsvUploader />} />
           <Route path='/team/csvcreator' element={ <CsvEditor />} />
+          <Route path='/team/scout_data' element={ <JsonDisplay />} />
           <Route path='/team' element={ <Urls />} />
 
           <Route path='/dashboard' element={<Authenticated>< DashBoard /></Authenticated>} />

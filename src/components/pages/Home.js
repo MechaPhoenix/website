@@ -3,6 +3,7 @@ import React from 'react';
 import PromoVideo from './PromoVideo';
 import RobotSection from './RobotSection';
 import '../css/Home.css';
+import '../css/dots.css'
 import Banner from "../../assets/7722Banner.png"
 
 const LandingPage = () => {

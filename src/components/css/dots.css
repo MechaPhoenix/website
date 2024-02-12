@@ -1,0 +1,125 @@
+/* variables */
+:root {
+    --blue: #26B3FF;
+    --blue-outer: rgba(85, 216, 232, 0.4);
+    --green: #35E861;
+    --green-outer: rgba(110, 255, 122, 0.4);
+    --red: #FF4B44;
+    --red-outer: rgba(232, 111, 112, 0.4);
+    --orange: #E87337;
+    --orange-outer: rgba(255, 183, 90, 0.4);
+  }
+  
+  /* animations */
+  @keyframes pulse-2-5 {
+    0% {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+    25% {
+      opacity: 0.75;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
+    }
+  }
+  
+  /* styles */
+  body {
+    background-color: rgb(29, 31, 32);
+  }
+  
+  .row {
+    margin-top: 45vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  h1 {
+    color: #fff;
+  }
+  
+  .dot {
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+  }
+  
+  .dot > span {
+    animation: pulse-2-5 1s linear infinite;
+    border-radius: 50%;
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+  
+  .dot > span > span {
+    animation: pulse-2-5 1s linear infinite;
+    border-radius: 50%;
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+  
+  .dot > span > span:after {
+    animation: pulse-2-5 1s linear infinite;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+  
+  .dot.blue {
+    background-color: var(--blue);
+  }
+  
+  .dot.blue > span {
+    background-color: var(--blue-outer);
+  }
+  
+  .dot.blue > span:after {
+    background-color: var(--blue-outer);
+  }
+  
+  .dot.green {
+    background-color: var(--green);
+  }
+  
+  .dot.green > span {
+    background-color: var(--green-outer);
+  }
+  
+  .dot.green > span:after {
+    background-color: var(--green-outer);
+  }
+  
+  .dot.red {
+    background-color: var(--red);
+  }
+  
+  .dot.red > span {
+    background-color: var(--red-outer);
+  }
+  
+  .dot.red > span:after {
+    background-color: var(--red-outer);
+  }
+  
+  .dot.orange {
+    background-color: var(--orange);
+  }
+  
+  .dot.orange > span {
+    background-color: var(--orange-outer);
+  }
+  
+  .dot.orange > span:after {
+    background-color: var(--orange-outer);
+  }
+  
